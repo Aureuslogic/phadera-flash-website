@@ -9,8 +9,7 @@ const seo = {
     "property strategist London, deal sourcer UK, property advisory, property consultant London, buy to let strategy, property investment mentor, deal negotiation, property legacy planning",
   canonical: "https://www.phaderaflash.com",
 };
-const bookingUrl =
-  "https://calendly.com/phaderaflash/creative-property-strategies";
+const bookingUrl = "https://calendly.com/phaderaflash/15min";
 
 export const metadata: Metadata = {
   title: seo.title,

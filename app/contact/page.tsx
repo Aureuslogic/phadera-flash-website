@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
-const bookingUrl =
-  "https://calendly.com/phaderaflash/creative-property-strategies";
+const bookingUrl = "https://calendly.com/phaderaflash/15min";
 
 export const metadata: Metadata = {
   title: "Contact",
