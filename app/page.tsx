@@ -9,6 +9,8 @@ const seo = {
     "property strategist London, deal sourcer UK, property advisory, property consultant London, buy to let strategy, property investment mentor, deal negotiation, property legacy planning",
   canonical: "https://www.phaderaflash.com",
 };
+const bookingUrl =
+  "https://calendly.com/phaderaflash/creative-property-strategies";
 
 export const metadata: Metadata = {
   title: seo.title,
@@ -99,7 +101,7 @@ const jsonLd = {
   },
   potentialAction: {
     "@type": "ReserveAction",
-    target: "https://calendar.google.com/calendar/u/1/r?pli=1",
+    target: bookingUrl,
     name: "Book a strategy call",
   },
 };
@@ -114,7 +116,10 @@ export default function PhaderaFlashWebsite() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.22),_transparent_28%),radial-gradient(circle_at_top_right,_rgba(147,51,234,0.18),_transparent_25%),linear-gradient(to_bottom,_rgba(15,23,42,1),_rgba(2,6,23,1))]" />
 
       <main className="relative mx-auto max-w-7xl px-6 py-10 md:px-10 lg:px-12">
-        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-slate-300">
+        <nav
+          aria-label="Breadcrumb"
+          className="mb-6 flex flex-wrap items-center justify-between gap-3 text-sm text-slate-300"
+        >
           <ol className="flex flex-wrap gap-2">
             <li>
               <a href="#" className="hover:text-white">
@@ -130,6 +135,14 @@ export default function PhaderaFlashWebsite() {
             <li>/</li>
             <li className="text-white">Book a Call</li>
           </ol>
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-violet-600 px-5 py-2.5 font-semibold text-white shadow-xl shadow-violet-950/30 transition hover:scale-[1.02] sm:w-auto"
+          >
+            Book a Strategy Call
+          </a>
         </nav>
         <section className="grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
           <div>
@@ -153,7 +166,7 @@ export default function PhaderaFlashWebsite() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="https://calendar.google.com/calendar/u/1/r?pli=1"
+                href={bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-2xl bg-gradient-to-r from-blue-500 to-violet-600 px-6 py-3 text-base font-semibold shadow-2xl shadow-violet-900/30 transition hover:scale-[1.02]"
@@ -367,12 +380,12 @@ export default function PhaderaFlashWebsite() {
           </h2>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="https://calendar.google.com/calendar/u/1/r?pli=1"
+              href={bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-2xl bg-gradient-to-r from-blue-500 to-violet-600 px-6 py-3 font-semibold shadow-2xl shadow-violet-950/40 transition hover:scale-[1.02]"
             >
-              Book with Phadera
+              Book a Strategy Call
             </a>
             <a
               href="mailto:hello@phaderaflash.com"
