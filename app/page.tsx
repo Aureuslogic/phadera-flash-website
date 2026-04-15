@@ -94,6 +94,111 @@ export default function PhaderaFlashWebsite() {
     "Bridged gaps where traditional professionals often leave clients needing more practical clarity and direction.",
   ];
 
+  const testimonials = [
+    {
+      client: "D L",
+      caseType: "Probate Support",
+      quote:
+        "Phadera took what felt like an overwhelming probate process and completely lifted the weight off my shoulders. Her guidance, clarity, and calm approach removed the stress at a time when I needed it most. I truly don't know how I would have managed without her.",
+    },
+    {
+      client: "D H",
+      caseType: "Estate and Housing Security",
+      quote:
+        "I was facing homelessness after my stepfather passed away without a will. Phadera stepped in and fought strategically on my behalf. Thanks to her, I am now walking away with a fair percentage of the estate instead of losing everything. She changed my situation completely.",
+    },
+    {
+      client: "C F",
+      caseType: "Criminal Defence Support",
+      quote:
+        "I was falsely arrested and facing serious charges. Phadera supported me through the process and helped prepare a strong motion to dismiss. The case was dropped, and the charges were dismissed. Her support made all the difference.",
+    },
+    {
+      client: "B W",
+      caseType: "Repossession Recovery",
+      quote:
+        "After my property was repossessed, I thought it was over. Phadera helped me regain control, and I was able to sell the property, clear my mortgage, and still walk away with a profit. I am beyond grateful.",
+    },
+    {
+      client: "A F",
+      caseType: "Property Investment",
+      quote:
+        "Phadera helped me secure a one-bedroom flat in Sydenham with no money down. Not only that, I walked away with £52,000 on completion. Her ability to structure deals is on another level.",
+    },
+    {
+      client: "D N",
+      caseType: "Utility Dispute Resolution",
+      quote:
+        "I was facing an £8,000 gas and electricity bill that didn't make sense. Phadera stepped in, challenged it, and got it reduced to just £1,000. Her letters are powerful and get real results.",
+    },
+    {
+      client: "A B",
+      caseType: "Luxury Property Acquisition",
+      quote:
+        "Phadera helped me secure my dream apartment in One Hyde Park. Her attention to detail and understanding of high-value property deals is exceptional.",
+    },
+    {
+      client: "R S",
+      caseType: "Property Portfolio Growth",
+      quote:
+        "With Phadera's guidance, we transitioned into becoming professional landlords. She helped us acquire properties in Hull and build a solid foundation for our portfolio.",
+    },
+    {
+      client: "B J",
+      caseType: "Property Sourcing",
+      quote:
+        "Phadera sourced excellent property opportunities for me in Liverpool. Her knowledge of the market and ability to identify the right deals is outstanding.",
+    },
+    {
+      client: "R H",
+      caseType: "International Investment",
+      quote:
+        "I was able to acquire my apartment in Florida with no money down, all thanks to Phadera's strategy and expertise. She opens doors you didn't even know existed.",
+    },
+    {
+      client: "S K",
+      caseType: "Property Sale",
+      quote:
+        "Phadera sold my house in Dulwich in record time. Her strategy, network, and execution are second to none.",
+    },
+    {
+      client: "R S",
+      caseType: "Property Acquisition",
+      quote:
+        "Phadera successfully secured the winning bid for my property in Brixton. Her negotiation skills and strategic approach gave me the edge I needed.",
+    },
+    {
+      client: "J H",
+      caseType: "Family Court Outcome",
+      quote:
+        "After three years of being separated from my son, Phadera helped me win my case. The judgment allowed me to be reunited with my 4-year-old child. This means everything to me.",
+    },
+    {
+      client: "G M",
+      caseType: "Compensation Claim",
+      quote:
+        "The council unlawfully crushed my car, and I didn't know where to turn. Phadera stepped in and helped me secure compensation for their wrongdoing. She truly stands up for her clients.",
+    },
+    {
+      client: "D P",
+      caseType: "Tenant Eviction",
+      quote:
+        "Phadera prepared my entire court bundle and supported me through the eviction process. Thanks to her, I was able to successfully regain possession of my property.",
+    },
+    {
+      client: "K B",
+      caseType: "Appeal Court Client and McKenzie Friend Support",
+      quote:
+        "Phadera supported me through my Appeal Court case, preparing my bundle and acting as my McKenzie Friend. With her help, I won my appeal. Her attention to detail and commitment is unmatched.",
+    },
+    {
+      client: "C H",
+      caseType: "Injunction Against Mortgage Company",
+      quote:
+        "Phadera successfully helped me obtain an injunction against my mortgage company when they were planning to sell my property at auction. She acted swiftly and strategically, and saved my home.",
+    },
+  ];
+
   return (
     <div className="relative min-h-screen bg-slate-950 text-white">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.22),_transparent_28%),radial-gradient(circle_at_top_right,_rgba(147,51,234,0.18),_transparent_25%),linear-gradient(to_bottom,_rgba(15,23,42,1),_rgba(2,6,23,1))]" />
@@ -394,6 +499,37 @@ export default function PhaderaFlashWebsite() {
               </p>
             </div>
           </div>
+        </section>
+
+        <section className="mt-14 rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur md:p-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-200">
+            Client Success Stories (Confidential and Verified)
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+            Real Clients. Real Results. Proven Strategy.
+          </h2>
+          <p className="mt-3 text-lg text-slate-300">Strategic Solutions for Complex Cases</p>
+          <p className="mt-4 max-w-5xl text-base leading-8 text-slate-300">
+            If you&apos;re facing a complex situation, book a consultation today.
+          </p>
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {testimonials.map(({ client, caseType, quote }, index) => (
+              <article key={`${client}-${caseType}-${index}`} className="rounded-3xl border border-white/10 bg-slate-900/50 p-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-200">
+                  {client} - {caseType}
+                </p>
+                <blockquote className="mt-4 leading-8 text-slate-200">&ldquo;{quote}&rdquo;</blockquote>
+              </article>
+            ))}
+          </div>
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex rounded-2xl bg-gradient-to-r from-blue-500 to-violet-600 px-6 py-3 font-semibold shadow-2xl shadow-violet-900/30 transition hover:scale-[1.02]"
+          >
+            Book a Consultation
+          </a>
         </section>
 
         <section className="mt-14 mb-6 rounded-[2rem] border border-white/10 bg-gradient-to-r from-blue-600/20 via-slate-900 to-violet-600/20 p-8 text-center backdrop-blur md:p-12">
