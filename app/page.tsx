@@ -3,6 +3,42 @@ import Image from "next/image";
 
 const bookingUrl = "https://calendly.com/phaderaflash/15min";
 
+const trustVolumes = [
+  {
+    volume: "Volume 1",
+    title: "Trust Foundations",
+    image: "/trust-volume-1.jpg",
+    alt: "Trust Foundations, Volume 1 book cover by Phadera Flash",
+    href: "https://amzn.eu/d/01H8h6Hc",
+    label: "Buy Volume 1 – Trust Foundations",
+  },
+  {
+    volume: "Volume 2",
+    title: "Trust: Asset Design & Governance",
+    image: "/trust-volume-2.jpg",
+    alt: "Trust: Asset Design and Governance, Volume 2 book cover by Phadera Flash",
+    href: "https://amzn.eu/d/06MYlHPs",
+    label: "Buy Volume 2 – Trust: Asset Design & Governance",
+  },
+  {
+    volume: "Volume 3",
+    title: "Trust: Client Legacy Planning",
+    image: "/trust-volume-3.jpg",
+    alt: "Trust: Client Legacy Planning, Volume 3 book cover by Phadera Flash",
+    href: "https://amzn.eu/d/048ZeV28",
+    label: "Buy Volume 3 – Trust: Client Legacy Planning",
+  },
+  {
+    volume: "Volume 4",
+    title: "Trust Dictionary",
+    image: "/trust-volume-4.jpg",
+    alt: "Trust Dictionary, Volume 4 book cover by Phadera Flash",
+    // Paste the Amazon link here when Volume 4 is available.
+    href: "",
+    label: "Volume 4 – Coming Soon",
+  },
+];
+
 const seo = {
   title: "Phadera Flash | Property Strategy, Deal Sourcing and Advisory",
   description:
@@ -240,7 +276,49 @@ export default function PhaderaFlashWebsite() {
           </div>
         </section>
 
-        <section className="grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+        <section
+          id="trust-series"
+          className="scroll-mt-8 rounded-[2rem] border border-amber-200/30 bg-gradient-to-br from-amber-100/15 via-white/5 to-violet-500/15 p-6 backdrop-blur md:p-8"
+        >
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-amber-100">The Trust Series™</p>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Buy The Trust Series</h2>
+          <p className="mt-3 max-w-3xl text-base leading-7 text-slate-200 md:text-lg">
+            Four volumes on UK trusts, asset design, and client legacy planning. Volumes 1 to 3 are available now on Amazon.
+          </p>
+          <div className="mt-6 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            {trustVolumes.map((book) => (
+              <article key={book.volume} className="flex h-full flex-col rounded-3xl border border-white/10 bg-slate-950/70 p-4">
+                <div className="relative mx-auto aspect-[2/3] w-full max-w-[220px] overflow-hidden rounded-2xl bg-white ring-1 ring-inset ring-white/10">
+                  <Image
+                    src={book.image}
+                    alt={book.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 80vw, 220px"
+                  />
+                </div>
+                <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-amber-100">{book.volume}</p>
+                <h3 className="mt-1 mb-4 text-lg font-semibold leading-snug text-white">{book.title}</h3>
+                {book.href ? (
+                  <a
+                    href={book.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto flex min-h-14 w-full items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-violet-600 px-4 py-3 text-center text-base font-semibold leading-snug text-white shadow-lg shadow-violet-900/30 transition hover:scale-[1.02]"
+                  >
+                    {book.label}
+                  </a>
+                ) : (
+                  <span className="mt-auto flex min-h-14 w-full cursor-default items-center justify-center rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-center text-base font-semibold leading-snug text-slate-100">
+                    {book.label}
+                  </span>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-10 grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
           <div>
             <div className="mb-4 inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm tracking-wide text-blue-200 backdrop-blur">
               Property strategist • Opportunity architect • Wealth structuring specialist
@@ -269,10 +347,10 @@ export default function PhaderaFlashWebsite() {
                 Book a Strategy Call
               </a>
               <a
-                href="#book"
+                href="#trust-series"
                 className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-base font-semibold text-slate-100 backdrop-blur transition hover:bg-white/10"
               >
-                Book Coming Out Soon
+                Buy The Trust Series
               </a>
             </div>
           </div>
@@ -400,7 +478,7 @@ export default function PhaderaFlashWebsite() {
 
           <div id="book" className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-violet-500/10 to-blue-500/10 p-8 backdrop-blur">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-200">
-              The Trust Series™ • Coming soon
+              The Trust Series™ • Volumes 1–3 available now
             </p>
             <h3 className="mt-3 text-3xl font-semibold">The missing piece between ownership and legacy</h3>
             <div className="mt-5 rounded-3xl border border-white/10 bg-white/5 p-5 text-center">
@@ -430,10 +508,10 @@ export default function PhaderaFlashWebsite() {
               </p>
             </div>
             <a
-              href="#"
-              className="mt-6 inline-flex rounded-2xl bg-gradient-to-r from-blue-500 to-violet-600 px-5 py-3 font-semibold text-white transition hover:scale-[1.02]"
+              href="#trust-series"
+              className="mt-6 inline-flex min-h-14 items-center rounded-2xl bg-gradient-to-r from-blue-500 to-violet-600 px-5 py-3 font-semibold text-white transition hover:scale-[1.02]"
             >
-              Notify Me on Release
+              Buy The Trust Series
             </a>
           </div>
         </section>
